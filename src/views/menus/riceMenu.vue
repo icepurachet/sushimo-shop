@@ -1,12 +1,23 @@
 <template>
     <div>
-        <h1>SUSHIMO</h1>
-        <a href="/:tableId/menus" class="button">ข้าวปั้น</a>
-        <a href="/:tableId/menus/rice" class="button">ข้าวด้ง</a>
-        <a href="/:tableId/menus/sashimi" class="button">ซาชิมิ</a>
-        <a href="/:tableId/menus/dessert" class="button">ของหวาน</a>
-        <a href="/:tableId/menus/drink" class="button">เครื่องดื่ม</a>
-    </div>
+            <h1>SUSHIMO</h1>
+            <div class="divider"></div>
+            <router-link :to="{ name: 'GetMenu', params: { tableId: tableId } }">
+            <span class="button">ข้าวปั้น</span>
+          </router-link>
+          <router-link :to="{ name: 'RiceMenu', params: { tableId: tableId } }">
+            <span class="button">ข้าวด้ง</span>
+          </router-link>
+          <router-link :to="{ name: 'SashimiMenu', params: { tableId: tableId } }">
+            <span class="button">ซาชิมิ</span>
+          </router-link>
+          <router-link :to="{ name: 'DessertMenu', params: { tableId: tableId } }">
+            <span class="button">ของหวาน</span>
+          </router-link>
+          <router-link :to="{ name: 'DrinkMenu', params: { tableId: tableId } }">
+            <span class="button">เครื่องดื่ม</span>
+          </router-link>
+        </div> 
 <!-- https://www.tsunagujapan.com/th/7-must-try-japanese-don-rice-bowl-dishes/ ที่มา -->
     <div>
         <table>
@@ -48,7 +59,12 @@
     </div>
 </template>
 <script>
-export default {
-    
-}
-</script>
+   export default {
+       data() {
+           return {
+               tableId: this.$route.params.tableId,
+               open: false
+           }
+        }
+   }
+   </script>

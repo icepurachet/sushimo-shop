@@ -28,11 +28,12 @@ const router = createRouter({
       path: '/:tableId/menus',
       name: 'GetMenu',
       component: () => import('@/views/menus/index.vue')
+      // component: () => import('../../vite.config/')
     },
     {
       path: '/admin',
       name: 'AdminMenu',
-      component: () => import('@/views/menus/admin.vue')
+      component: () => import('@/views/admin/index.vue')
     },
     {
       path: '/:tableId/menus/rice',
@@ -53,7 +54,13 @@ const router = createRouter({
       path: '/:tableId/menus/drink',
       name: 'DrinkMenu',
       component: () => import('@/views/menus/drinkMenu.vue')
+    },
+    {
+      path: '/:tableId/cart',
+      name: 'Cart',
+      component: () => import('@/views/cart/index.vue')
     }
+
   ],
 })
 
