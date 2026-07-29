@@ -11,10 +11,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 const connection = mysql.createConnection({
-  host: 'localhost', // ip or localhost 
-  port: 3306,
+  host: 'turntable.proxy.rlwy.net', // ip or localhost 
+  port: 47745,
   user: 'root', // username mysql
-  password: 'ณแำุึภตภค', // password mysql
+  password: 'blLJOUiCkPTxzSMfTQhjEMmXJHgmRmKh', // password mysql
   database: 'sushimo' // select database that you wanted
 })
 
