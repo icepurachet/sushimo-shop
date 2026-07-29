@@ -15,7 +15,7 @@
 export default {
     methods: {
         goToAdmin () {
-            this.$router.push({ name: 'AdminMenu' })
+            this.$router.push({ name: 'AdminLogin' })
         },
         goToCustomer () {
             const id = prompt("Enter your table number") 

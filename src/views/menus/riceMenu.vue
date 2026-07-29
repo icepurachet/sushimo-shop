@@ -1,5 +1,13 @@
 <template>
     <div>
+        <div class="cart-container">
+        <span @click="goToCart()" class="cart-icon" >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="currentColor">
+                <path d="M2 8c-1.1 0-2 .9-2 2s.9 2 2 2h1l3.6 9.6c.3.8 1 1.4 1.9 1.4h8c.9 0 1.6-.6 1.9-1.4L21 12h1c1.1 0 2-.9 2-2s-.9-2-2-2h-4.3l-3.6-6.3C14.8 1.3 14.4 1 14 1s-.8.3-1 .7L9.4 8H2zm4.1 2L9.8 4h4.4l3.7 6H6.1zm3.4 7c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm6 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"/>
+            </svg>
+        </span> 
+    </div>
+
             <h1>SUSHIMO</h1>
             <div class="divider"></div>
             <router-link :to="{ name: 'GetMenu', params: { tableId: tableId } }">
@@ -18,8 +26,19 @@
             <span class="button">เครื่องดื่ม</span>
           </router-link>
         </div> 
+
+        <div class="grid-menu">
+            <div v-for="(menu, index) in menus" :key="index">
+                <div>
+                    <img :src="menu.picture" height="100px" width="auto" />
+                    <p>{{ menu.name }}</p>
+                    <p>{{ menu.price }}</p>
+                </div>
+            </div>
+        </div>
+
 <!-- https://www.tsunagujapan.com/th/7-must-try-japanese-don-rice-bowl-dishes/ ที่มา -->
-    <div>
+    <!-- <div>
         <table>
         <tr>
             <td>
@@ -56,15 +75,36 @@
             </td>
         </tr>
     </table>
-    </div>
+    </div> -->
 </template>
 <script>
+   import api from '@/services/api'
    export default {
        data() {
            return {
                tableId: this.$route.params.tableId,
-               open: false
+               open: false,
+               menus: []
+           };
+       },
+       mounted() {
+        this.getMenus()
+       },
+       methods: {
+           goToCart() {
+            this.$router.push({ name: 'Cart', params: { tableId: this.tableId } });
+           },
+           async getMenus() {
+            try {
+                const res = await api.get('/menus/type/rice')
+                this.menus = res.data
+            } catch (error) {
+                console.error(error)
+            }
            }
-        }
+       }
    }
+
+
    </script>
+   

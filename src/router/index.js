@@ -25,15 +25,70 @@ const router = createRouter({
     //   component: () => import('@/views/menus/index.vue')
     // },
     {
-      path: '/:tableId/menus',
+      path: '/:tableId/menus/',
       name: 'GetMenu',
       component: () => import('@/views/menus/index.vue')
       // component: () => import('../../vite.config/')
     },
     {
-      path: '/admin',
-      name: 'AdminMenu',
+      path: '/admin/login',
+      name: 'AdminLogin',
+      component: () => import('@/views/admin/login.vue')
+    },
+    {
+      path: '/admin/index',
+      name: 'AdminIndex',
       component: () => import('@/views/admin/index.vue')
+    },
+    {
+      path: '/admin/menus',
+      name: 'DisplayMenus',
+      component: () => import('@/views/admin/menus.vue')
+    },
+    {
+      path: '/admin/types',
+      name: 'DisplayTypes',
+      component: () => import('@/views/admin/types.vue')
+    },
+    {
+      path: '/admin/users',
+      name: 'DisplayUsers',
+      component: () => import('@/views/admin/users.vue')
+    },
+    {
+      path: '/admin/menus/create',
+      name: 'CreateMenu',
+      component: () => import('@/views/admin/createMenu.vue')
+    },
+    {
+      path: '/admin/types/create',
+      name: 'CreateType',
+      component: () => import('@/views/admin/createType.vue')
+    },
+    {
+      path: '/admin/users/create',
+      name: 'CreateUser',
+      component: () => import('@/views/admin/createUser.vue')
+    },
+    {
+      path: '/admin/menus/update/:id',
+      name: 'UpdateMenu',
+      component: () => import('@/views/admin/updateMenu.vue')
+    },
+    {
+      path: '/admin/types/update/:id',
+      name: 'UpdateType',
+      component: () => import('@/views/admin/updateType.vue')
+    },
+    {
+      path: '/admin/users/update/:id',
+      name: 'UpdateUser',
+      component: () => import('@/views/admin/updateUser.vue')
+    },
+    {
+      path: '/members',
+      name: 'Members',
+      component: () => import('@/views/menus/members.vue')
     },
     {
       path: '/:tableId/menus/rice',
@@ -60,7 +115,6 @@ const router = createRouter({
       name: 'Cart',
       component: () => import('@/views/cart/index.vue')
     }
-
   ],
 })
 
