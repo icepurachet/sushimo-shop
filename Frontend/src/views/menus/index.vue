@@ -112,10 +112,8 @@
 <script>
 import axios from 'axios';
 
-// กำหนด URL พื้นฐาน: ถ้าอยู่บนเว็บจริงให้เปลี่ยนเป็น URL Backend ของคุณ (เช่น Render/Railway)
-const API_BASE_URL = window.location.hostname === 'localhost' 
-  ? 'http://localhost:8080' 
-  : 'ใส่_URL_Backend_ของคุณที่นี่'; 
+// กำหนด URL พื้นฐานให้วิ่งเข้าหา Backend บนเครื่อง (Localhost)
+const API_BASE_URL = 'http://localhost:8080';
 
 export default {
   data() {
