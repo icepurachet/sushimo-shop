@@ -28,3 +28,11 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+# เพิ่มเติมสำหรับโปรเจกต์แยก Frontend/Backend
+Frontend/node_modules/
+Backend/node_modules/
+
+# เพิ่มการซ่อนไฟล์ความลับ (สำคัญมากสำหรับตอน Deploy)
+.env
+.env.*
+!.env.example
