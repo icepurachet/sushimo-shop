@@ -11,10 +11,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 const connection = mysql.createConnection({
-  host: 'turntable.proxy.rlwy.net', // ip or localhost 
-  port: 47745,
+  host: 'localhost', // ip or localhost 
+  port: 3306,
   user: 'root', // username mysql
-  password: 'blLJOUiCkPTxzSMfTQhjEMmXJHgmRmKh', // password mysql
+  password: 'ณแำุึภตภค', // password mysql
   database: 'sushimo' // select database that you wanted
 })
 
@@ -147,15 +147,27 @@ app.get('/users/:id', (req, res) => {
 
 app.get('/menus/type/:types', (req, res) => {
   const types = req.params.types
+
   const sql = `
-    select m.id, m.name, m.price, m.picture, t.name as 'type_name' from menus m 
-    join types t on m.types_id = t.id 
-    where t.name = ? `
+    SELECT
+      m.id,
+      m.name,
+      m.price,
+      m.image,
+      t.name AS type_name
+    FROM menus m
+    JOIN types t ON m.type_id = t.id
+    WHERE t.name = ?
+  `
+
   const values = [types]
+
   connection.query(sql, values, (err, result) => {
     if (err) {
-      throw err
+      console.error(err)
+      return res.status(500).json({ error: err.message })
     }
+
     res.json(result)
   })
 })

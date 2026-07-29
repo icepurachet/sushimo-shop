@@ -42,10 +42,12 @@
       </span>
 
       <div class="grid-menu">
-        <div v-for="(menu, index) in menus" :key="'menu-' + index" class="menu-item" @click="viewMenuDetail(menu)">
-          <img :src="menu.picture" height="100px" width="auto" />
-          <p>{{ menu.name }}</p>
-          <p>{{ menu.price }}</p>
+        <div v-for="(menu, index) in menus" :key="index">
+          <div @click="viewMenuDetail(menu)" style="cursor: pointer;">
+            <img :src="menu.image" height="100px" width="auto" />
+            <p>{{ menu.name }}</p>
+            <p>{{ menu.price }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -53,7 +55,7 @@
     <!-- Menu Detail Page -->
     <div v-if="selectedMenu" class="menu-detail-container">
       <h2>{{ selectedMenu.name }}</h2>
-      <img :src="selectedMenu.picture" alt="Menu image" />
+      <img :src="selectedMenu.image" alt="Menu image" />
       <p>{{ selectedMenu.price }} THB</p>
       <div class="quantity-control">
         <button @click="decreaseAmount">-</button>
@@ -102,9 +104,7 @@
       <h2 class="success-text">Registration Successful</h2>
       <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" class="success-icon" alt="success" />
       <br>
-      <!-- <div class="bottom-buttons"> -->
-        <button class="add-to-cart-button" @click="backToMemberInput">Back to Member Page</button>
-      <!-- </div> -->
+      <button class="add-to-cart-button" @click="backToMemberInput">Back to Member Page</button>
     </div>
   </div>
 </template>
@@ -146,7 +146,7 @@ export default {
     }
   },
   mounted() {
-    this.getMenu('sushi');
+    this.getMenu('Sushi');
   },
   methods: {
     goBackToMainMenu() {
@@ -266,4 +266,3 @@ export default {
   }
 };
 </script>
-
