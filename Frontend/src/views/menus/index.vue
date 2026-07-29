@@ -112,6 +112,11 @@
 <script>
 import axios from 'axios';
 
+// กำหนด URL พื้นฐาน: ถ้าอยู่บนเว็บจริงให้เปลี่ยนเป็น URL Backend ของคุณ (เช่น Render/Railway)
+const API_BASE_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:8080' 
+  : 'ใส่_URL_Backend_ของคุณที่นี่'; 
+
 export default {
   data() {
     return {
@@ -159,7 +164,7 @@ export default {
     },
     async getMenu(type) {
       try {
-        const res = await axios.get(`http://localhost:8080/menus/type/${type}`);
+        const res = await axios.get(`${API_BASE_URL}/menus/type/${type}`);
         this.menus = res.data;
       } catch (error) {
         console.error(error);
@@ -209,7 +214,7 @@ export default {
         this.showSuccess = true;
 
         axios
-          .post('http://localhost:8080/members', this.newMember)
+          .post(`${API_BASE_URL}/members`, this.newMember)
           .then(response => {
             console.log(response.data);
             this.newMember.name = '';
@@ -238,7 +243,7 @@ export default {
       };
 
       try {
-        const res = await axios.post('http://localhost:8080/payments', form, {
+        const res = await axios.post(`${API_BASE_URL}/payments`, form, {
           headers: { 'Content-Type': 'application/json' }
         });
 
