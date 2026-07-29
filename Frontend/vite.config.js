@@ -25,6 +25,8 @@ export default defineConfig(({ mode }) => {
       const transformedCode = code
         .replaceAll(localApiUrl, apiBaseUrl)
         .replaceAll('menu.picture', 'menu.image')
+        .replaceAll('res.data[0].types_id', 'res.data[0].type_id')
+        .replaceAll('res.data[0].picture', 'res.data[0].image')
 
       return transformedCode === code ? null : transformedCode
     }
