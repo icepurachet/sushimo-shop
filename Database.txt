@@ -1,0 +1,149 @@
+USE sushimo;
+
+SHOW TABLES ;
+
+INSERT INTO users
+values (1,'Nat','5555') ;
+
+INSERT INTO users
+values (2,'Ice','6666') ;
+
+INSERT INTO `types`
+values (1,'Sushi',1) ;
+
+INSERT INTO `types`
+values (2,'rice',1) ;
+
+INSERT INTO `types`
+values (3,'sashimi',1) ;
+
+INSERT INTO `types`
+values (4,'dessert',1) ;
+
+INSERT INTO `types`
+values (5,'drink',1) ;
+
+INSERT INTO menus
+values (1,'Salmon Sushi',40,1,"https://images-ext-1.discordapp.net/external/gu5SrBXEJxwj_x9PKs3GJuYvzSrUdUdjhIW7qWUwWpM/https/fit-d.com/uploads/food/1a611d3cf0d8853931cc9ea80f264a0b.jpg?format=webp&width=881&height=587") ;
+
+INSERT INTO menus
+values (2,'Tuna Sushi',40,1,"https://media.timeout.com/images/105909627/750/562/image.jpg") ;
+
+INSERT INTO menus
+values (3,'Grilled Eel Sushi',40,1,"https://images-ext-1.discordapp.net/external/Oh5oixmBfaVRTtgywp2VuzI0_3QapQuFeh2jqZ8msL0/https/media-cdn.tripadvisor.com/media/photo-s/12/56/f5/d2/caption.jpg?format=webp&width=687&height=516") ;
+
+INSERT INTO menus
+values (4,'Butterfly shrimp Sushi',30,1,"https://images-ext-1.discordapp.net/external/AftzGlkaAQBlIPvPO5RCDKX02znY74YCQF0AD1GQnk8/%3Fwidth%3D%25s/https/images.deliveryhero.io/image/fd-th/Products/182509047.jpg?format=webp&width=881&height=643") ;
+
+INSERT INTO menus
+values (5,'Shrimp Roe Sushi',30,1,"https://images-ext-1.discordapp.net/external/EGn36DZOBX5h9fNJG1rAVRgvm3g19jZPwAHWcW3LzKM/https/kiji.life/newkiji/wp-content/uploads/2020/12/Tobiko.jpg?format=webp&width=500&height=348") ;
+
+INSERT INTO menus
+values (6,'Sweet Egg Sushi',20,1,"https://inwfile.com/s-cu/k4o6jb.jpg") ;
+
+INSERT INTO menus
+values (7,'Crab Stick Sushi',20,1,"https://images-ext-1.discordapp.net/external/Pf3VYFD1WpzF-exFgbCmZuwYF291OxtZqs7I1tVOroQ/https/inwfile.com/s-cu/c74cyy.jpg?format=webp&width=500&height=500") ;
+
+INSERT INTO menus
+values (8,'Sushi roll',40,1,"https://images-ext-1.discordapp.net/external/bNKg3FqFjk2zBnwW-a7WipKjLLJiC2JDtO3vr3vGrQU/https/chillchilljapan.com/wp-content/uploads/2020/09/shutterstock_27348049.jpg?format=webp&width=881&height=587") ;
+
+INSERT INTO menus
+values (9,'Katsudon',119,2,"https://images-ext-1.discordapp.net/external/lS7ocHDwMZFE3qdEUUmHH8oyrL8KH5WpzO_m-_U5lWQ/https/www.calforlife.com/image/food/Katsudon-fried-pork-rice-bowl-.jpg?format=webp&width=500&height=333") ;
+
+INSERT INTO menus
+values (10,'Gyudon',129,2,"https://images-ext-1.discordapp.net/external/X2yl1zs41B6oOyu4PwptGxQqr8_EE1ui6IUdyQpACyc/https/media.foodguru.co.th/media/blog_feature_images/japanese-beef-bowl-gyudon.jpg?format=webp&width=881&height=495") ;
+
+INSERT INTO menus
+values (11,'Oyakodon',109,2,"https://images-ext-1.discordapp.net/external/_KzVAu4pKX90Al__8u4_8K5Eb5ZGXJGSJCpb3D7943o/https/s.isanook.com/jp/0/ui/0/4355/oyakodon1.jpg?format=webp&width=881&height=587") ;
+
+INSERT INTO menus
+values (12,'Unadon',129,2,"https://images-ext-1.discordapp.net/external/ob_D2uxR1ffdNBkUypiTRAqnDeOlojWeYNdlpLkrL1E/https/kiji.life/eats/wp-content/uploads/2019/01/FCM_4494.jpg?format=webp&width=881&height=587") ;
+
+INSERT INTO menus
+values (13,'Butadon',139,2,"https://images-ext-1.discordapp.net/external/B25eAIqxdfbYaOS3u3PTIBZhZdyINASpW8zQrSqHnxA/https/kiji.life/eats/wp-content/uploads/2018/12/DSC_5233.jpg?format=webp&width=881&height=588") ;
+
+INSERT INTO menus
+values (14,'Kaisendon',169,2,"https://images-ext-1.discordapp.net/external/tSkMRyyqxAKwEd8CAaoyR3nq_sTTekL5vaJTNPHmFhc/https/eats.jp/images/cuisine/photo/big_w20220307gp6bjj113332175538.webp?format=webp&width=881&height=587") ;
+
+INSERT INTO menus
+values (15,'Salmon Sashimi',119,3,"https://images-ext-1.discordapp.net/external/BA_47zWEOKtj1JgPUdepVrkKrbcgvpFnqmCA5f6bjYI/https/1376delivery.com/productimages/3893_PARTY%2520SALMON%2520SASHIMI%252010%2520Pcs..jpg?format=webp&width=637&height=637") ;
+
+INSERT INTO menus
+values (16,'Crab Stick Sashimi',69,3,"https://images-ext-1.discordapp.net/external/goPj7ME51DP52_w1NrQOC0o-9vUB-TOB8RYfwp82XT0/https/img.wongnai.com/p/1920x0/2016/01/10/fb1be49605c14292ace87ee085a60bbd.jpg?format=webp&width=881&height=661") ;
+
+INSERT INTO menus
+values (17,'Tuna Sashimi',119,3,"https://images-ext-1.discordapp.net/external/l4KMQTA1oPisaIGBd8x0pr2d3BKQQaYpC7O6_zi6cM0/https/static.thairath.co.th/media/4DQpjUtzLUwmJZZPFht0Ne3aSH54E7v3L6b76rtxYKUO.jpg?format=webp&width=800&height=450") ;
+
+INSERT INTO menus
+values (18,'Green tea ice cream',35,4,"https://f.ptcdn.info/975/065/000/pxv53fijq0yJL5T4GKh-o.jpg") ;
+
+INSERT INTO menus
+values (19,'Coconut Ice Cream',35,4,"https://images-ext-1.discordapp.net/external/q3iidhWDLWG2rYU0rrd1MgHczIiW-teTQmabDRH4ECQ/https/images.deliveryhero.io/image/fd-th/LH/v42d-listing.jpg?format=webp&width=881&height=645") ;
+
+INSERT INTO menus
+values (20,'Thai Tea Ice Cream',35,4,"https://images-ext-1.discordapp.net/external/uDkwU-lIHM9S46R9oxSS0Hc5w1vv9ZsXOuYaUtnEyUo/https/i.ytimg.com/vi/Q1RiK2DSPIQ/maxresdefault.jpg?format=webp&width=881&height=496") ;
+
+INSERT INTO menus
+values (21,'Daifuku',35,4,"https://images-ext-1.discordapp.net/external/r5G7cNw8pkmMSeOY5BxUyj9wVxo5BJyVxbxAbtXUZdY/https/chillchilljapan.com/wp-content/uploads/2021/08/pixta_37850788_M.jpg?format=webp&width=881&height=661") ;
+
+INSERT INTO menus
+values (22,'Water',12,5,"https://www.dohome.co.th/media/catalog/product/cache/e446f15aaa8dc66b80b7a0df334f7c5a/1/0/10184045_zwg_1200_1.jpg") ;
+
+INSERT INTO menus
+values (23,'Pepsi',20,5,"https://images-ext-1.discordapp.net/external/vuSkAMtp9wxuO85ABvIFwezFN8C2JVs51sZNiAZKF6s/https/sentosakhonkaen.com/wp-content/uploads/2021/07/S_0011_8858998581221.jpg?format=webp&width=662&height=662") ;
+
+INSERT INTO menus
+values (24,'Lemon juice',30,5,"https://images-ext-1.discordapp.net/external/KR0bZphB-_iERTXLEkzeuxAHdLA2EDgTFqnf2NYJ1tc/https/yayoirestaurants.com/productimages/8858_880x800_3.jpg?format=webp&width=412&height=375") ;
+
+INSERT INTO menus
+values (25,'Lemon Tea',30,5,"https://images-ext-1.discordapp.net/external/a-O2az30aowubctpe5VDGO3HBUBKfM0KvqhEXsIrook/https/s359.kapook.com/pagebuilder/aea20974-a1b8-44d5-be43-c018b6448758.jpg?format=webp&width=662&height=662") ;
+
+INSERT INTO menus
+values (26,'Green Tea',30,5,"https://images-ext-1.discordapp.net/external/K3hMqbOWxyyOvEy1WtsmWF_2wAfBttr9r9n0HnKsMPY/https/cms.dmpcdn.com/food/2021/09/23/cf270230-1c59-11ec-93be-57c545abb0ec_original.jpg?format=webp&width=662&height=662") ;
+
+INSERT INTO menus
+values (27,'Ice',5,5,"https://png.pngtree.com/png-clipart/20240731/original/pngtree-putting-ice-cubes-in-empty-glass-on-dark-background-png-image_15668930.png") ;
+
+INSERT INTO members
+values (1,'Lion','0123456789') ;
+
+INSERT INTO members
+values (2,'Cat','0987654321') ;
+
+INSERT INTO payments
+values (1,520,2) ;
+
+INSERT INTO payments
+values (2,432,1) ;
+
+INSERT INTO payments
+values (3,80,1) ;
+
+INSERT INTO carts
+values (3,1,2,80) ;
+
+INSERT INTO carts
+values (2,9,4,160) ;
+
+SELECT * FROM users ;
+
+SELECT * FROM menus ;
+
+SELECT * FROM types ;
+
+SELECT * FROM members ;
+
+SELECT * FROM payments ;
+
+SELECT * FROM carts ;
+
+
+
+
+
+
+
+
+
+
+
