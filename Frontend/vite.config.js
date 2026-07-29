@@ -9,25 +9,30 @@ const deployedApiUrl = 'https://sushimo-shop-iqpv.onrender.com'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const apiBaseUrl = (env.VITE_API_BASE_URL || (mode === 'production' ? deployedApiUrl : localApiUrl)).replace(/\/+$/, '')
+  const configuredApiUrl = env.VITE_API_BASE_URL || (mode === 'production' ? deployedApiUrl : localApiUrl)
+  const apiBaseUrl = configuredApiUrl.endsWith('/') ? configuredApiUrl.slice(0, -1) : configuredApiUrl
 
-  const replaceLocalApiUrl = {
-    name: 'replace-local-api-url',
+  const normalizeProductionSource = {
+    name: 'normalize-production-source',
     enforce: 'pre',
     transform(code, id) {
       const isSourceFile = id.includes('/src/') || id.includes('\\src\\')
 
-      if (!isSourceFile || !code.includes(localApiUrl)) {
+      if (!isSourceFile) {
         return null
       }
 
-      return code.replaceAll(localApiUrl, apiBaseUrl)
+      const transformedCode = code
+        .replaceAll(localApiUrl, apiBaseUrl)
+        .replaceAll('menu.picture', 'menu.image')
+
+      return transformedCode === code ? null : transformedCode
     }
   }
 
   return {
     plugins: [
-      replaceLocalApiUrl,
+      normalizeProductionSource,
       vue(),
       vueDevTools(),
     ],
